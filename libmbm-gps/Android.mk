@@ -19,7 +19,8 @@ include $(CLEAR_VARS)
 #
 API_ICS:= 14 15
 API_JB:= 16
-API_SUPPORTED:= $(API_ICS) $(API_JB)
+API_UNTESTED:= 17 18 19
+API_SUPPORTED:= $(API_ICS) $(API_JB) $(API_UNTESTED)
 
 # Check if supported
 ifeq "$(findstring $(PLATFORM_SDK_VERSION),$(API_SUPPORTED))" ""
