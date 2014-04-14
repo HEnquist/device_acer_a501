@@ -150,19 +150,52 @@ on boot
     chown system system /sys/module/cpu_tegra/parameters/cpu_user_cap
     chmod 0664 /sys/module/cpu_tegra/parameters/cpu_user_cap
 
-# RIL
-# Define TCP buffer sizes for hspa networks
-#   ReadMin, ReadInitial, ReadMax, WriteMin, WriteInitial, WriteMax
-    setprop net.tcp.buffersize.umts  4096,87380,524288,4096,87380,524288
-    setprop net.tcp.buffersize.hspa  4096,87380,524288,4096,87380,524288
-    setprop net.tcp.buffersize.hsdpa 4096,87380,524288,4096,87380,524288
-    setprop net.tcp.buffersize.hsupa 4096,87380,524288,4096,87380,524288
+
+# Define TCP buffer sizes for various networks
+    #   ReadMin, ReadInitial, ReadMax, WriteMin, WriteInitial, WriteMax,
+    setprop net.tcp.buffersize.default 4096,87380,110208,4096,16384,110208
+    setprop net.tcp.buffersize.wifi    524288,1048576,2097152,262144,524288,1048576
+    setprop net.tcp.buffersize.lte     524288,1048576,2560000,262144,524288,1220608
+    setprop net.tcp.buffersize.umts    4094,87380,110208,4096,16384,110208
+    setprop net.tcp.buffersize.hspa    4092,87380,704512,4096,16384,262144
+    setprop net.tcp.buffersize.hsupa   4092,87380,704512,4096,16384,262144
+    setprop net.tcp.buffersize.hsdpa   4092,87380,704512,4096,16384,110208
+    setprop net.tcp.buffersize.hspap   4092,87380,704512,4096,16384,262144
+    setprop net.tcp.buffersize.edge    4093,26280,35040,4096,16384,35040
+    setprop net.tcp.buffersize.gprs    4092,8760,11680,4096,8760,11680
+    setprop net.tcp.buffersize.evdo    4094,87380,262144,4096,16384,262144
+    setprop net.tcp.buffersize.evdo_b  4094,87380,262144,4096,16384,262144
+	
+	# Set Loglevel for MBM GPS
+    setprop mbm.gps.config.loglevel INFO
+    # Set the device for controlling the gps
+    setprop mbm.gps.config.gps_ctrl /dev/cdc-wdm0
+    # Set the device for nmea data
+    setprop mbm.gps.config.gps_nmea /dev/ttyACM2
+    # Set the desired mode (PGPS,SUPL or STANDALONE
+    setprop mbm.gps.config.gps_pref_mode PGPS
+    # The following settings are only used for SUPL
+    # Enable network initiated requests
+    setprop mbm.gps.config.supl.enable_ni yes
+    # Allow connecting to supl servers without certificates
+    setprop mbm.gps.config.supl.uncert yes
+    # Enable RIL NITZ
+    setprop mbm.ril.config.nitz yes
+    # Enable RIL Fast Dormancy
+    setprop mbm.ril.config.fd yes
 
 # Write Wi-Fi Mac 
 service wifimacwriter /system/bin/wifimacwriter
     class main
     oneshot
-
+	
+service ril-daemon /system/bin/rild -l /system/lib/libmbm-ril.so -- -d /dev/ttyACM1 -i rmnet0
+    class main
+    socket rild stream 660 root radio
+    socket rild-debug stream 660 radio system
+    user root
+    group radio cache inet misc audio sdcard_r sdcard_rw log
+		  
 # make binder state/stats readable by root only, so that they are not
 # captured by default in bugreports
     chmod 0400 /sys/kernel/debug/binder/stats
@@ -170,17 +203,18 @@ service wifimacwriter /system/bin/wifimacwriter
 
 	
 # Ericsson MBM
-on property:ro.dinfo.radio=3G
-    chown root root /dev/bus/usb/002/049
-    chmod 666 /dev/bus/usb/002/049
+on init
+    # Enable USB auto suspend for MBM devices
     write /sys/bus/usb/devices/1-1/power/autosuspend 2
     write /sys/bus/usb/devices/1-1/power/control auto
     write /sys/bus/usb/devices/1-1/power/wakeup enabled
+    # if necessary for device
     write /sys/bus/usb/devices/2-1/power/autosuspend 2
     write /sys/bus/usb/devices/2-1/power/control auto
     write /sys/bus/usb/devices/2-1/power/wakeup enabled
-    symlink /dev/bus/usb/002/049 /dev/cdc-wdm0
-    symlink /dev/bus/usb/002/050 /dev/cdc-wdm1
+    # if necessary for ICS
+    # symlink /dev/bus/usb/002/049 /dev/cdc-wdm0
+    # symlink /dev/bus/usb/002/050 /dev/cdc-wdm1
     chown system system /dev/cdc-wdm0
     chmod 0666 /dev/cdc-wdm0
     chown system system /dev/cdc-wdm1

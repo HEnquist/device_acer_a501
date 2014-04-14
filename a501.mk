@@ -49,7 +49,11 @@ PRODUCT_PACKAGES += \
     tinyplay \
     tinycap \
     tinyrec \
-    Torch 
+    Torch \
+    gps.$(TARGET_DEVICE) \
+    MbmService \
+    libmbm-ril \
+    Mms
 
 # ramdisk
 PRODUCT_COPY_FILES += \
@@ -84,6 +88,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
     frameworks/native/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml \
     frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
+    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
 
 # prebuilt configs
 PRODUCT_COPY_FILES += \
@@ -91,10 +96,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/etc/audio_effects.conf:system/etc/audio_effects.conf \
     $(LOCAL_PATH)/prebuilt/etc/audio_policy.conf:system/etc/audio_policy.conf \
     $(LOCAL_PATH)/prebuilt/etc/gpsconfig.xml:system/etc/gps/gpsconfig.xml \
-    $(LOCAL_PATH)/prebuilt/etc/gps.conf:system/etc/gps.conf \
     $(LOCAL_PATH)/prebuilt/etc/media_codecs.xml:system/etc/media_codecs.xml \
     $(LOCAL_PATH)/prebuilt/data/srs_processing.cfg:system/data/srs_processing.cfg \
-    $(LOCAL_PATH)/prebuilt/etc/mixer_paths.xml:system/etc/mixer_paths.xml
+    $(LOCAL_PATH)/prebuilt/etc/mixer_paths.xml:system/etc/mixer_paths.xml \
+    $(LOCAL_PATH)/vendor/mbm/support/gps.conf:system/etc/gps.conf
 
 # keychars/layout
 PRODUCT_COPY_FILES += \
