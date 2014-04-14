@@ -39,7 +39,7 @@ ifneq "$(findstring $(PLATFORM_SDK_VERSION), $(API_ICS))" ""
 endif
 
 # Add CyanogenMod 11.0 specific condition
-MBM_CM:= true
+# MBM_CM:= true
 
 LOCAL_SRC_FILES:= \
     u300-ril.c \
