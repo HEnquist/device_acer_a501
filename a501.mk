@@ -99,7 +99,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/etc/media_codecs.xml:system/etc/media_codecs.xml \
     $(LOCAL_PATH)/prebuilt/data/srs_processing.cfg:system/data/srs_processing.cfg \
     $(LOCAL_PATH)/prebuilt/etc/mixer_paths.xml:system/etc/mixer_paths.xml \
-    $(LOCAL_PATH)/vendor/mbm/support/gps.conf:system/etc/gps.conf
+    $(LOCAL_PATH)/support/gps.conf:system/etc/gps.conf
 
 # keychars/layout
 PRODUCT_COPY_FILES += \
