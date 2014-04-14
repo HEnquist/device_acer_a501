@@ -21,7 +21,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/zImage:kernel
 
 # inherit proprietary files
-$(call inherit-product-if-exists, vendor/acer/a500/a500-vendor.mk)
+$(call inherit-product-if-exists, vendor/acer/a501/a501-vendor.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, build/target/product/full_base.mk)
 $(call inherit-product-if-exists, framework/base/data/videos/VideoPackage2.mk)
@@ -156,7 +156,7 @@ PRODUCT_CHARACTERISTICS := tablet
 
 # Bluetooth config file (IconiaHD project)
 PRODUCT_COPY_FILES += \
-    device/acer/a500/bluetooth/main.nonsmartphone.conf:system/etc/bluetooth/main.conf \
+    device/acer/a501/bluetooth/main.nonsmartphone.conf:system/etc/bluetooth/main.conf \
 
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
@@ -172,7 +172,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapminfree=512k \
     dalvik.vm.heapmaxfree=8m
 
-PRODUCT_NAME := omni_a500
-PRODUCT_DEVICE := a500
+PRODUCT_NAME := omni_a501
+PRODUCT_DEVICE := a501
 PRODUCT_BRAND := acer
-PRODUCT_MODEL := a500
+PRODUCT_MODEL := a501

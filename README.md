@@ -1,4 +1,4 @@
-android_device_acer_a200
+android_device_acer_a501
 ========================
 
 Branch 'cm-11' is designed for Cyanogenmod repository KitKat 4.4

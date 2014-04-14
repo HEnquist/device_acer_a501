@@ -43,33 +43,33 @@ ARCH_ARM_HIGH_OPTIMIZATION := true
 
 
 # Change to test tf101 config
-TARGET_OTA_ASSERT_DEVICE := picasso,a500
+TARGET_OTA_ASSERT_DEVICE := picasso,a501
 # Change to test tf101 config
 #USE_ALL_OPTIMIZED_STRING_FUNCS := true
 
 
 # kernel
 TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.6
-TARGET_KERNEL_SOURCE := kernel/acer/a500
+TARGET_KERNEL_SOURCE := kernel/acer/a501
 
 # Use this config for kernel
 TARGET_KERNEL_CONFIG := jellyplay_defconfig
 
 
-#TARGET_PREBUILT_KERNEL := device/acer/a500/prebuilt/zImage
+#TARGET_PREBUILT_KERNEL := device/acer/a501/prebuilt/zImage
 BOARD_KERNEL_CMDLINE :=
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_PAGE_SIZE := 0x00000800
 
 # Recovery
-#TARGET_RECOVERY_KERNEL := device/acer/a500/recovery/recovery_kernel
-#TARGET_RECOVERY_FSTAB := device/acer/a500/recovery/recovery.fstab
-TARGET_RECOVERY_FSTAB := device/acer/a500/ramdisk/fstab.picasso
+#TARGET_RECOVERY_KERNEL := device/acer/a501/recovery/recovery_kernel
+#TARGET_RECOVERY_FSTAB := device/acer/a501/recovery/recovery.fstab
+TARGET_RECOVERY_FSTAB := device/acer/a501/ramdisk/fstab.picasso
 
 # Warning : If you change this, you've to clean before rebuild !
 RECOVERY_FSTAB_VERSION := 2
 
-TARGET_PREBUILT_RECOVERY_KERNEL := device/acer/a500/prebuilt/zImage
+TARGET_PREBUILT_RECOVERY_KERNEL := device/acer/a501/prebuilt/zImage
 
 # TWRP Settings
 DEVICE_RESOLUTION := 1280x800
@@ -103,7 +103,7 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 
 # Display
 USE_OPENGL_RENDERER    := true
-BOARD_EGL_CFG          := device/acer/a500/prebuilt/etc/egl.cfg
+BOARD_EGL_CFG          := device/acer/a501/prebuilt/etc/egl.cfg
 BOARD_NO_ALLOW_DEQUEUE_CURRENT_BUFFER := true
 BOARD_USE_SKIA_LCDTEXT := true
 BOARD_USES_HGL := true
@@ -135,8 +135,8 @@ BOARD_HAVE_GPS := true
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 BOARD_BLUETOOTH_USES_HCIATTACH_PROPERTY := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/acer/a500/bluetooth
-BOARD_BLUEDROID_VENDOR_CONF := device/acer/a500/bluetooth/bt_vendor.conf
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/acer/a501/bluetooth
+BOARD_BLUEDROID_VENDOR_CONF := device/acer/a501/bluetooth/bt_vendor.conf
 
 # USB 
 BOARD_UMS_LUNFILE := "/sys/class/android_usb/f_mass_storage/lun/file"
@@ -173,7 +173,7 @@ BOARD_FLASH_BLOCK_SIZE              := 131072
 POLICYVERS   := 24
 
 #BOARD_SEPOLICY_DIRS := \
-#   device/acer/a500/selinux
+#   device/acer/a501/selinux
 
 #BOARD_SEPOLICY_UNION := \
 #    file_contexts \
