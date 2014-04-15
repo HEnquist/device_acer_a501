@@ -50,10 +50,12 @@ PRODUCT_PACKAGES += \
     tinycap \
     tinyrec \
     Torch \
+	telephony-common \
     gps.$(TARGET_DEVICE) \
     MbmService \
     libmbm-ril \
-    Mms
+    Mms 
+	
 
 # ramdisk
 PRODUCT_COPY_FILES += \
