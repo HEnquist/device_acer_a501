@@ -65,7 +65,7 @@ on post-fs-data
     chmod 777 /data/misc/wifi/wpa_supplicant.conf
 	
 	# make directory for mbmservice
-	mkdir /data/data 0777 system system
+	mkdir /data/data/mbmservice 0777 system system
 
     # we will remap this as /storage/sdcard0 with the sdcard fuse tool
     chown media_rw media_rw /data/media
