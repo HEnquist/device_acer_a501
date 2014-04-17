@@ -21,7 +21,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/zImage:kernel
 
 # inherit proprietary files
-$(call inherit-product-if-exists, vendor/acer/a501/a501-vendor.mk)
+$(call inherit-product-if-exists, vendor/acer/a500/a500-vendor.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, build/target/product/full_base.mk)
 $(call inherit-product-if-exists, framework/base/data/videos/VideoPackage2.mk)
