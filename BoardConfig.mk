@@ -43,7 +43,7 @@ ARCH_ARM_HIGH_OPTIMIZATION := true
 
 
 # Change to test tf101 config
-TARGET_OTA_ASSERT_DEVICE := picasso,a501
+TARGET_OTA_ASSERT_DEVICE := picasso,a500
 # Change to test tf101 config
 #USE_ALL_OPTIMIZED_STRING_FUNCS := true
 
