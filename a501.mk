@@ -133,7 +133,6 @@ PRODUCT_AAPT_PREF_CONFIG := mdpi
 PRODUCT_PROPERTY_OVERRIDES := \
     wifi.interface=wlan0 \
     wifi.supplicant_scan_interval=30 \
-    ro.dinfo.radio=Wifi \
     ro.bq.gpu_to_cpu_unsupported=1 \
     debug.hwui.render_dirty_regions=false \
     ro.opengles.version=131072 \

@@ -63,6 +63,9 @@ on post-fs-data
     mkdir /data/misc/dhcp 0770 dhcp dhcp
     chown dhcp dhcp /data/misc/dhcp
     chmod 777 /data/misc/wifi/wpa_supplicant.conf
+	
+	# make directory for mbmservice
+	mkdir /data/data 0777 system system
 
     # we will remap this as /storage/sdcard0 with the sdcard fuse tool
     chown media_rw media_rw /data/media
