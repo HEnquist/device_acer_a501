@@ -33,7 +33,7 @@ ifneq "$(findstring $(PLATFORM_SDK_VERSION), $(API_ICS))" ""
   $(warning MBM GPS: Ice Cream Sandwich is set: $(MBM_ICS))
 endif
 
-LOCAL_MODULE := gps.$(TARGET_DEVICE)
+LOCAL_MODULE := gps.picasso
 LOCAL_MODULE_TAGS := optional
 
 LOCAL_SRC_FILES := \
