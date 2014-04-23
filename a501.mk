@@ -50,8 +50,8 @@ PRODUCT_PACKAGES += \
     tinycap \
     tinyrec \
     Torch \
-	telephony-common \
-    gps.$(TARGET_DEVICE) \
+    telephony-common \
+    gps.picasso \
     MbmService \
     libmbm-ril \
     Mms 
