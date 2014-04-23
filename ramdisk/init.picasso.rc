@@ -64,8 +64,8 @@ on post-fs-data
     chown dhcp dhcp /data/misc/dhcp
     chmod 777 /data/misc/wifi/wpa_supplicant.conf
 	
-	# make directory for mbmservice
-	mkdir /data/data/mbmservice 0777 system system
+    # make directory for mbmservice
+    # mkdir /data/data/mbmservice 0777 system system
 
     # we will remap this as /storage/sdcard0 with the sdcard fuse tool
     chown media_rw media_rw /data/media
@@ -218,6 +218,10 @@ on init
     # if necessary for ICS
     # symlink /dev/bus/usb/002/049 /dev/cdc-wdm0
     # symlink /dev/bus/usb/002/050 /dev/cdc-wdm1
+    symlink /dev/ttyACM0 /dev/bus/usb/002/049
+    symlink /dev/ttyACM1 /dev/bus/usb/002/050
+    symlink /dev/bus/usb/002/049 /dev/cdc-wdm0
+    symlink /dev/bus/usb/002/050 /dev/cdc-wdm1
     chown system system /dev/cdc-wdm0
     chmod 0666 /dev/cdc-wdm0
     chown system system /dev/cdc-wdm1
