@@ -192,12 +192,6 @@ service wifimacwriter /system/bin/wifimacwriter
     class main
     oneshot
 	
-service ril-daemon /system/bin/rild -l /system/lib/libmbm-ril.so -- -d /dev/ttyACM1 -i rmnet0
-    class main
-    socket rild stream 660 root radio
-    socket rild-debug stream 660 radio system
-    user root
-    group radio cache inet misc audio sdcard_r sdcard_rw log
 		  
 # make binder state/stats readable by root only, so that they are not
 # captured by default in bugreports
