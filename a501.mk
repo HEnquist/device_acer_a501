@@ -101,7 +101,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/etc/media_codecs.xml:system/etc/media_codecs.xml \
     $(LOCAL_PATH)/prebuilt/data/srs_processing.cfg:system/data/srs_processing.cfg \
     $(LOCAL_PATH)/prebuilt/etc/mixer_paths.xml:system/etc/mixer_paths.xml \
-    $(LOCAL_PATH)/support/gps.conf:system/etc/gps.conf
+	$(LOCAL_PATH)/prebuilt/etc/spn-conf.xml:system/etc/spn-conf.xml \
+    $(LOCAL_PATH)/support/gps.conf:system/etc/gps.conf \
+	vendor/omni/prebuilt/etc/apns-conf.xml:system/etc/apns-conf.xml
 
 # keychars/layout
 PRODUCT_COPY_FILES += \
