@@ -26,11 +26,7 @@ spnOverride attributes:
 	fake_home_on: regard specified PLMN as home
     fake_roaming_on: regard specified PLMN as roaming (comma-separated list)
     	
-examples:
-	<spnOverride 
-		numeric="45001" spn="ko_KR;?œêµ­??SPN,en;English SPN,fr;FranÃ§ais SPN,pl;Polski SPN,Default SPN" 
-		spn_display_rule="SPN_RULE_SHOW_SPN" spn_override_only_on="45001" fake_home_on="00101,45008"/>
-    <spnOverride numeric="46001" spn="zh_CN;ä¸?›½?”é€? />
+
 -->
 <spnOverrides>
 
