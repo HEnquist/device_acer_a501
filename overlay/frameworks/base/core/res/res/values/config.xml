@@ -26,9 +26,9 @@
 
   <!--  <string name="config_datause_iface">wlan0</string> -->
     <!-- This device is not "voice capable"; it's data-only. -->
-    <bool name="config_voice_capable">false</bool>
+    <bool name="config_voice_capable">true</bool>
 
-    <!-- This device does not allow sms service. -->
+    <!-- This device allows sms service. -->
     <bool name="config_sms_capable">true</bool>
 
     <bool name="config_batterySdCardAccessibility">true</bool>
@@ -204,8 +204,12 @@
 
    <!-- Package name(s) containing location provider support -->
     <string-array name="config_locationProviderPackageNames" translatable="false">
+        <!-- The standard AOSP fused location provider -->
         <item>com.android.location.fused</item>
+        <!-- Legacy Google provider - consider removing -->
         <item>com.google.android.location</item>
+        <!-- GMS (gapps) provider for 4.4 and above-->
+        <item>com.google.android.gms</item>
     </string-array>
 	
 	<!-- Ericsson MBM -->
